@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<!--- Defining meta information for the page -->
+
+<head>
+<!--    Type of characters used within the website   -->
+<meta charset="UTF-8">
+    
+<!--    Description of the content within the website  -->
+<meta name="description" content="Assignment 1">
+    
+<!--    Keywords for SEO   -->
+<meta name="keywords" content="HTML,CSS,jQuery,JavaScript">
+    
+<!--    The person who wrote the website and it's content  -->
+<meta name="author" content="Gelmis Bartulis">
+    
+<!--    Width compatibility for different plaforms with different screens   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<!--- Link for jQuery scripts for animations and form processing -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<script type="text/javascript" src="js/script.js" ></script>
+
+<!--- Linking Google fonts --> 
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--- Relating the stylesheet -->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<title> Assignment 1 </title>
+
+</head>
+
+
+<body>
+
+    <!--  Get all the DIV's in one to preserve speed and efficiency  -->
+    <div id="fullContent">
+        
+        
+        <!--   Show the screen for the user to selectthe option they would like     -->
+        <div id="selectMethod">
+        
+
+        
+            <!-- Welcomings  -->
+            <h1>Welcome</h1>
+            
+            
+            <!-- Giving user the options to choose from -->
+            <div id="options">
+                <button id="optionSignIn" value="signIn" type="button">Sign in</button>
+                
+                <button id="optionRegister" value="register" type="button">Register</button>
+            </div>
+            
+        </div>
+        
+        
+        
+        <div id="signIn" hidden>
+            
+            
+            <div id="goBackArrow">
+                <img src="images/back.png" id="backArrow" alt="Go back icon">
+            </div>
+            
+            
+            <h2>Sign in</h2>
+
+            <form onsubmit="showSignIn(); return false">
+
+                <br>
+                <br>
+
+                <label for="usernameSignIn"> Username </label>
+                <input type="text" id="usernameSignIn" name="usernameSignIn">
+
+                <br>
+                <br>
+
+                <label for="passwordSignIn"> Password </label>
+                <input type="password" id="passwordSignIn" name="passwordSignIn">
+                
+                <br>
+                <br>
+
+                <button type="submit" id="submitSignIn" value="submit" name="Submit">Submit</button>
+
+            </form>
+            
+        
+        </div>
+        
+        
+        
+        
+        
+        <!--- The whole web content belongs to this DIV -->
+        <div id="register" hidden>
+
+            
+                        
+            <div id="goBackArrow1">
+                <img src="images/back.png" id="backArrow1" alt="Go back icon">
+            </div>
+            
+            
+            
+            <!--  Content heading      -->
+            <h2> Register </h2>
+
+            <!--- A form that allows for details to be processed 				-->
+            <!--- When user enters the details and clicks submit, a script (run below) 	-->
+            <!--- allows to add (cache) all the details submitted within the form 		-->
+            <!--- to be reused and shown within the textarea and the user input fields  	-->
+
+            <form id="formInline" onsubmit="resultsFun(); return false" >
+
+                <table>
+                    <tr>
+                        <td class="label"><label for="fname"> First name: </label></td>
+                        <td><input id="fname" type="text" name="fname" placeholder="e.g. John"> </td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+
+                    <tr>
+                        <td class="label"><label for="lname"> Last name: </label></td>
+                        <td><input id="lname" type="text" name="lname" placeholder="e.g. Johnny" ></td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    
+                    
+                    <tr>
+                        <td class="label"><label for="email"> Email: </label></td>
+                        <td><input id="email" type="text" placeholder="e.g. user@example.com" name="email" > <img src="images/logo.png" id="emailImg"></td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    
+
+                    <tr>
+                        <td class="label"><label for="dob"> D.O.B </label></td>
+                        <td><input id="dob" type="date" max="2010-01-31" name="dob"> </td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    
+
+                    <tr>
+                        <td class="label"><label for="pass1"> Password: </label></td>
+                        <td><input id="pass1" type="password" name="pass1" > </td>
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    
+
+                    <tr>
+                        <td class="label"><label for="pass2"> Confirm password: </label></td>
+                        <td><input id="pass2" type="password" name="pass2" ></td>
+                    </tr>   
+
+                </table>
+
+
+                <div id="formButtons">
+                    <label for="gen" id="labelGen"> Please select gender</label>
+                    <br>
+                    <br>
+                    <label for="gender" value= "Male">Male</label>
+                    <input type="radio" class="radio" name="gender" value="male"> 
+
+                    <label for="gender" value= "Female">Female</label>
+                    <input type="radio" class="radio" name="gender" value="female"> 
+
+                    <label for="gender" value= "Other">Other</label>
+                    <input type="radio" class="radio" name="gender" value="other">  <br>
+                </div>
+
+                <textarea id="output" readonly rows=8></textarea>
+
+
+                <button id="submit" type="submit" >Submit</button>
+
+            </form>
+
+        </div>
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+
+
+</body>
+</html>
